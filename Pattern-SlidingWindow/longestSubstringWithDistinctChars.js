@@ -40,3 +40,8 @@ function longestDistinct(str) {
 
 const result = longestDistinct('aabccbb');
 console.log(result);
+
+// Time complexity is O(N) where N is the number of characters in the input string
+
+// Space complexity is O(K) where K is the number of distinct characters in the input string. K <= N, since in the worst
+// case the whole string may contain distinct characters.
