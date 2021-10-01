@@ -34,3 +34,8 @@ console.log(`LinkedList has cycle: ${has_cycle(head)}`);
 
 head.next.next.next.next.next.next = head.next.next.next;
 console.log(`LinkedList has cycle: ${has_cycle(head)}`);
+
+// Time complexity is O(N) where N is the number of nodes in the linked list. This is becuase we know the fast pointer will meet the slow
+// pointer in the same loop once they have both entered the loop
+
+// space complexity is O(1)
