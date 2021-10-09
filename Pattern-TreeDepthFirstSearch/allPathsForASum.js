@@ -1,8 +1,8 @@
 // Given a binary tree and a number ‘S’, find all paths from root-to-leaf such that the sum of all the node values of each path equals ‘S’.
 
 class TreeNode {
-  constructor(value) {
-    this.value = value;
+  constructor(val) {
+    this.val = val;
     this.left = null;
     this.right = null;
   }
