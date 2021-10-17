@@ -1,0 +1,23 @@
+{
+  "name": "grokkingthecodinginterview",
+  "version": "1.0.0",
+  "description": "Some of the most common algorithm patterns. Each pattern is accompanied with a collection of problems and solutions. Written in Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conor47/GrokkingTheCodingInterview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conor47/GrokkingTheCodingInterview/issues"
+  },
+  "homepage": "https://github.com/conor47/GrokkingTheCodingInterview#readme",
+  "dependencies": {
+    "collections": "^5.1.12"
+  }
+}
