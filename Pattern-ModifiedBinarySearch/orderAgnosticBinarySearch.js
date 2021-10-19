@@ -27,7 +27,7 @@ const binary_search = function (arr, key) {
   let end = arr.length - 1;
   let isAscending = arr[start] < arr[end];
   while (start < end) {
-    let mid = Math.floor(start - (end - start) / 2);
+    let mid = Maths.abs(Math.floor(start - (end - start) / 2));
 
     if (arr[mid] === key) {
       return mid;
