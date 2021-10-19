@@ -41,6 +41,10 @@ const search_next_letter = function (letters, key) {
   return letters[start % n];
 };
 
+// Time complexity is O(Log N)
+
+// Space complexity is O(1)
+
 console.log(search_next_letter(['a', 'c', 'f', 'h'], 'f'));
 console.log(search_next_letter(['a', 'c', 'f', 'h'], 'b'));
 console.log(search_next_letter(['a', 'c', 'f', 'h'], 'm'));
