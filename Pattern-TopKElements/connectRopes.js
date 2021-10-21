@@ -21,11 +21,13 @@
 let heap = require('collections/heap');
 
 const minimum_cost_to_connect_ropes = function (ropeLengths) {
-  result = 0;
+  let result = 0;
   let minHeap = new heap(ropeLengths, null, (a, b) => b - a);
 
-  while (minHeap.length > 0) {
-    result += minHeap.pop();
+  while (minHeap.length > 1) {
+    let temp = minHeap.pop() + minHeap.pop();
+    result += temp;
+    minHeap.push(temp);
   }
   return result;
 };
