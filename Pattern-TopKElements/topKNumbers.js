@@ -15,7 +15,7 @@
 const heap = require('collections/heap');
 
 function k_largest_numbers(nums, k) {
-  const minHeap = new Heap([], null, (a, b) => b - a);
+  const minHeap = new heap([], null, (a, b) => b - a);
 
   //   put first k elements into heap
   for (i = 0; i < k; i++) {
