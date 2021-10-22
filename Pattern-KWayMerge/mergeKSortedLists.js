@@ -44,6 +44,10 @@ const merge_lists = function (lists) {
   return resultHead;
 };
 
+// Time complexity is O(N * logK)
+
+// Space complexity is O(K)
+
 l1 = new ListNode(2);
 l1.next = new ListNode(6);
 l1.next.next = new ListNode(8);
