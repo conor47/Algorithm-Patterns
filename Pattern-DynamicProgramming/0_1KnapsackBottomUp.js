@@ -42,6 +42,24 @@ function solveKnapsack(profits, weights, capacity) {
     }
   }
 
+  //   function for printing the selected weights in the final solution
+  let selectedWeights = '';
+  let totalProfit = dp[n - 1][capacity];
+  let remainingCapacity = capacity;
+  for (let i = weights.length - 1; i > 0; i--) {
+    if (totalProfit !== dp[i - 1][remainingCapacity]) {
+      selectedWeights = `${weights[i]} ${selectedWeights}`;
+      remainingCapacity -= weights[i];
+      totalProfit -= profits[i];
+    }
+  }
+
+  if (totalProfit !== 0) {
+    selectedWeights = `${weights[0]} ${selectedWeights}`;
+  }
+
+  console.log(`Weights selected : ${selectedWeights}`);
+
   return dp[n - 1][capacity];
 }
 
@@ -53,5 +71,5 @@ console.log(
   `Total knapsack profit: ---> ${solveKnapsack(profits, weights, 7)}`
 );
 console.log(
-  `Total knapsack profit: ---> ${solveKnapsack(profits, weights, 6)}`
+  `Total knapsack profit: ---> ${solveKnapsack(profits, weights, 8)}`
 );
