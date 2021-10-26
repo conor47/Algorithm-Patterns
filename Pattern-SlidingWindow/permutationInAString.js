@@ -65,7 +65,7 @@ const find_permutation = function (str, pattern) {
       return true;
     }
 
-    if (windowEnd >= pattern.length - 1) {
+    if (windowEnd - windowStart >= pattern.length - 1) {
       let leftChar = str[windowStart];
       windowStart += 1;
       if (leftChar in charFrequency) {
@@ -87,3 +87,6 @@ console.log(`Permutation exist: ${find_permutation('oidbcaf', 'abc')}`);
 console.log(`Permutation exist: ${find_permutation('odicf', 'dc')}`);
 console.log(`Permutation exist: ${find_permutation('bcdxabcdy', 'bcdyabcdx')}`);
 console.log(`Permutation exist: ${find_permutation('aaacb', 'abc')}`);
+console.log(
+  `Permutation exist: ${find_permutation('conorladriganilmyname', 'ladrigan')}`
+);
