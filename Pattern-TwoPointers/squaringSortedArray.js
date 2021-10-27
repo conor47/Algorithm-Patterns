@@ -33,4 +33,8 @@ function squareSorted(arr) {
   return squares;
 }
 
+// Time complexity is O(N)
+
+// Space complexity is O(N)
+
 console.log(squareSorted([-3, -1, 0, 1, 2]));

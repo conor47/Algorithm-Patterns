@@ -43,4 +43,8 @@ function findPair(arr, targetSum, first) {
   return count;
 }
 
+// Time complexity is O(N^2)
+
+// Space complexity is O(N) for sorting
+
 console.log(smallerSum([-1, 4, 2, 1, 3], 5));

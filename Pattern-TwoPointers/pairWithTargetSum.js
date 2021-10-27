@@ -31,4 +31,6 @@ function targetSum(arr, target) {
   return [-1, -1];
 }
 
+// Time complexity is O(N)
+
 console.log(targetSum([1, 2, 3, 4, 6], 6));

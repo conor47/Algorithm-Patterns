@@ -53,4 +53,10 @@ function searchPair(arr, targetSum, left, result) {
   }
 }
 
+// Time complexity of sorting the array is O(N * Log N). Time complexity of searchPair function is O(N) but are calling it for
+// every element in the array in the worst case, making the time complexity O(N * LogN * N^2 ). This is aymptotically equivalent to
+// O(N^2)
+
+// Space complexity for sorting is O(N). Space complexity for the output array is O(N)
+
 console.log(uniqueTriplets([-5, 2, -1, -2, 3]));
