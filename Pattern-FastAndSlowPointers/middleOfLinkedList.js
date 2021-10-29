@@ -1,7 +1,5 @@
 // Given the head of a Singly LinkedList, write a method to return the middle node of the LinkedList.
 
-const { setLocale } = require('faker/locale/zh_TW');
-
 // If the total number of nodes in the LinkedList is even, return the second middle node.
 
 // Example 1:

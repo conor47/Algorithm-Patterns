@@ -45,6 +45,7 @@ function calculateCycleLength(slow) {
     current = current.next;
     count += 1;
     if (current === slow) {
+      break;
     }
   }
   return count;
