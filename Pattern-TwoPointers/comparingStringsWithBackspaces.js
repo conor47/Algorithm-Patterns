@@ -71,3 +71,5 @@ console.log(backspace_compare('xy#z', 'xzz#'));
 console.log(backspace_compare('xy#z', 'xyz#'));
 console.log(backspace_compare('xp#', 'xyz##'));
 console.log(backspace_compare('xywrrmp', 'xywrrmu#p'));
+
+module.exports = backspace_compare;
