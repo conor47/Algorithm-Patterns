@@ -36,3 +36,5 @@ function averages_of_subarrays_efficient(k, arr) {
   }
   return result;
 }
+
+module.exports = averages_of_subarrays_efficient;

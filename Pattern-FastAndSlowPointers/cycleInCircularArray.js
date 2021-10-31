@@ -74,3 +74,8 @@ const find_next_index = function (arr, isForward, currentIndex) {
 
   return nextIndex;
 };
+
+// time complexity is O(N^2) since we are trying to detect a cycle for each element
+// in the array
+
+// Space complexity is O(1)
