@@ -30,6 +30,11 @@ const cyclic_sort = function (nums) {
   return nums;
 };
 
+// Time complexity is O(N). In the worst case the while loop will swap total of n-1 numbers. Overall the time complexity is
+// O(N) + O(N -1) which is asymptotically equivalent to O(N)
+
+// space complexity is O(1)
+
 console.log(`${cyclic_sort([3, 1, 5, 4, 2])}`);
 console.log(`${cyclic_sort([2, 6, 4, 3, 1, 5])}`);
 console.log(`${cyclic_sort([1, 5, 6, 4, 3, 2])}`);
