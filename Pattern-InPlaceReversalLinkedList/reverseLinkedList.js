@@ -29,6 +29,10 @@ const reverse = function (head) {
   return prev;
 };
 
+// Time complexity is O(N)
+
+// Space complexity is O(1)
+
 head = new Node(2);
 head.next = new Node(4);
 head.next.next = new Node(6);
