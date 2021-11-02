@@ -9,22 +9,20 @@ class TreeNode {
 }
 
 const find_level_averages = function (root) {
-  result = [];
+  let result = [];
   if (root === null) return result;
-  let queue = [];
-  let current = root;
-  queue.unshift(current);
+  let queue = [root];
   while (queue.length) {
     let levelSize = queue.length;
     let currentLevel = 0;
     for (let i = 0; i < levelSize; i++) {
-      current = queue.pop();
+      current = queue.shift();
       currentLevel += current.value;
-      if (current.left !== null) {
-        queue.unshift(current.left);
+      if (current.left) {
+        queue.push(current.left);
       }
-      if (current.right !== null) {
-        queue.unshift(current.right);
+      if (current.right) {
+        queue.push(current.right);
       }
     }
     result.push(currentLevel / levelSize);
@@ -32,12 +30,12 @@ const find_level_averages = function (root) {
   return result;
 };
 
-var root = new TreeNode(12);
-root.left = new TreeNode(7);
-root.right = new TreeNode(1);
-root.left.left = new TreeNode(9);
-root.left.right = new TreeNode(2);
-root.right.left = new TreeNode(10);
-root.right.right = new TreeNode(5);
+var root = new TreeNode(3);
+root.left = new TreeNode(9);
+root.right = new TreeNode(20);
+root.left.left = new TreeNode(null);
+root.left.right = new TreeNode(null);
+root.right.left = new TreeNode(15);
+root.right.right = new TreeNode(7);
 
 console.log(`Level averages are: ${find_level_averages(root)}`);
