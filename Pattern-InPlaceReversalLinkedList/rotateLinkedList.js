@@ -42,6 +42,10 @@ const rotate = function (head, rotations) {
   return head;
 };
 
+// Time complexity is O(n)
+
+// Space complexity is O(1)
+
 head = new Node(1);
 head.next = new Node(2);
 head.next.next = new Node(3);
