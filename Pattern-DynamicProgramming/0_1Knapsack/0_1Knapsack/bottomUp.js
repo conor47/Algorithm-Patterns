@@ -19,7 +19,7 @@ function solveKnapsack(profits, weights, capacity) {
   //  if we only have one item then add it if it does not exceed the capacity
 
   for (let i = 0; i <= capacity.length; i++) {
-    if (weights[0] <= c) dp[0][c] = profits[0];
+    if (weights[0] <= i) dp[0][i] = profits[0];
   }
 
   //   process all subarrays for all capacities
