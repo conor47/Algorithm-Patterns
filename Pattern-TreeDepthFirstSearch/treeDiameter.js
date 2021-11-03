@@ -35,6 +35,10 @@ class TreeDiameter {
   }
 }
 
+// time complexity is O(N) since we are visiting every node in the tree
+
+// space complexity is O(N) for the recursion stack. In the worst case the tree is maximally skewed ie a linked list
+
 var treeDiameter = new TreeDiameter();
 var root = new TreeNode(1);
 root.left = new TreeNode(2);
