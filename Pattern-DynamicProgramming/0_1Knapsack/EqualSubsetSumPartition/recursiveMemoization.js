@@ -27,7 +27,6 @@ let canPartition = function (num) {
 };
 
 let canPartitionRecursive = function (dp, num, sum, currentIndex, dp) {
-  console.log(dp);
   if (sum === 0) return true;
   if (num.length === 0 || currentIndex >= num.length) return false;
 
