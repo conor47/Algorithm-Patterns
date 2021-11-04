@@ -20,9 +20,9 @@ const find_letter_case_string_permutations = function (str) {
         let chars = permutations[j].split('');
 
         if (chars[i] === chars[i].toLowerCase()) {
-          chars[i] = chars[i].toUpperCase;
+          chars[i] = chars[i].toUpperCase();
         } else {
-          chars[i] = chars[i].toLowerCase;
+          chars[i] = chars[i].toLowerCase();
         }
         permutations.push(chars.join(''));
       }
