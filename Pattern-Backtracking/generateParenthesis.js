@@ -13,9 +13,13 @@ const generateParenthesis = (n) => {
       return;
     }
 
+    // here is where we exercise our choices
+
+    // if we have left parenthesis then place it
     if (left > 0) {
       backtrack(left - 1, right, str + '(');
     }
+    // if we have a right parenthesis then place it
     if (r > 0) {
       backtrack(left, right - 1, str + ')');
     }
@@ -23,5 +27,3 @@ const generateParenthesis = (n) => {
   backtrack(n, n, '');
   return result;
 };
-
-// Space complexity of this solution is the max size of the call stack during execution which is
