@@ -31,7 +31,7 @@ const search_ceiling_of_a_number = function (arr, key) {
   let end = arr.length - 1;
   if (key > arr[end]) return -1;
   while (start < end) {
-    let mid = Math.abs(Math.floor(start - (end - start / 2)));
+    let mid = Math.abs(Math.floor(start + (end - start / 2)));
     if (arr[mid] === key) {
       if (arr[mid + 1] !== null) return mid;
     } else if (arr[mid] < key) start = mid + 1;

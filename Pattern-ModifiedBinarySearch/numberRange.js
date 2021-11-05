@@ -20,7 +20,7 @@
 const find_range = function (arr, key) {
   result = [-1, -1];
   result[0] = binary_search(arr, key, false);
-  if (!result[0] !== -1) {
+  if (result[0] !== -1) {
     result[1] = binary_search(arr, key, true);
   }
   return result;
@@ -30,7 +30,7 @@ const binary_search = function (arr, key, findMax) {
   let keyIndex = -1;
   let start = 0;
   let end = arr.length - 1;
-  while (start < end) {
+  while (start <= end) {
     let mid = Math.floor(start + (end - start) / 2);
     if (arr[mid] < key) start = mid + 1;
     else if (arr[mid] > key) end = mid - 1;
