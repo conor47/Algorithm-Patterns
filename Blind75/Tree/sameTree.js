@@ -12,3 +12,6 @@ let isSameTree = function (p, q) {
 // space complexity is O(N) sine each node is visited in
 
 // space complextiy is O(N) in the worst case and O(log N) in the best case
+
+// The iterative solution involves using two deqeues to track the nodes in each tree
+// and we perform the same checks as above
