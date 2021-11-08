@@ -59,4 +59,4 @@ const solveRodCutting = function (lengths, prices, n) {
 
 const lengths = [1, 2, 3, 4, 5];
 const prices = [2, 6, 7, 10, 13];
-console.log(`Maximum profit: ---> ${solveRodCutting(lengths, prices, 7)}`);
+console.log(`Maximum profit: ---> ${solveRodCutting(lengths, prices, 5)}`);
