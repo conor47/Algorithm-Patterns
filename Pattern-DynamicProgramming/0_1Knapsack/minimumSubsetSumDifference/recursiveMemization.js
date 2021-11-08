@@ -22,7 +22,7 @@ let canPartition = function (num) {
       dp[currentIndex][sum1] = Math.min(diff1, diff2);
     }
 
-    return dp[currentIndex];
+    return dp[currentIndex][sum1];
   }
   return canPartitionRecursive(num, 0, 0, 0);
 };
