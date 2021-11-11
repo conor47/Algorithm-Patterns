@@ -32,3 +32,23 @@ var canJump = function (nums) {
 // Time complexity is O(N)
 
 // Space complexity is O(1)
+
+// back tracking solution
+
+const canJumpV2 = function (nums) {
+  return canJumpFromPosition(0, nums);
+};
+
+const canJumpFromPosition = function (index, nums) {
+  if (index === nums.length - 1) {
+    return true;
+  }
+
+  let maxJump = Math.min(index + nums[index], nums.length - 1);
+  for (let nextPosition = index + 1; nextPosition <= maxJump; nextPosition++) {
+    if (canJumpFromPosition(nextPosition, nums)) {
+      return true;
+    }
+  }
+  return false;
+};
