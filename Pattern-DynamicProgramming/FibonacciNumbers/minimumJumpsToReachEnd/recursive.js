@@ -32,7 +32,13 @@ const countMinJumps = function (jumps) {
   return countMin(jumps, 0);
 };
 
+// Time complexity is O(2^n). The while loop can execute a total of n times
+// and we are calling the function recursively in each iteration.
+
+// Space complexity is O(N) for the recursion stack
+
 console.log(`Minimum jumps needed: ---> ${countMinJumps([2, 1, 1, 1, 4])}`);
 console.log(
   `Minimum jumps needed: ---> ${countMinJumps([1, 1, 3, 6, 9, 3, 0, 1, 3])}`
 );
+``;
