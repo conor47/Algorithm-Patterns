@@ -46,7 +46,7 @@ const longestSub = function (str) {
 
 // Time complexity is O(3^N) due to the three recursive calls
 
-// Space complexity is O(N) for the recursion stack
+// Space complexity is O(N) for the recursion
 
 console.log(`Length of LPS ---> ${longestSub('abdbca')}`);
 console.log(`Length of LPS ---> ${longestSub('cddpd')}`);
