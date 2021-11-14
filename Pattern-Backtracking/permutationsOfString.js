@@ -2,7 +2,7 @@
 
 const permute = (letters) => {
   let result = [];
-  dfsRecursive(letters, [], Array(letters.length).fill(false), res);
+  dfsRecursive(letters, [], Array(letters.length).fill(false), result);
   return result;
 };
 
@@ -29,3 +29,5 @@ const dfsRecursive = (letters, path, used, res) => {
 };
 
 // space complexity is O(N)
+
+console.log(permute('con'));
