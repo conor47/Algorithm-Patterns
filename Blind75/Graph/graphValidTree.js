@@ -35,3 +35,8 @@ var validTree = function (n, edges) {
   }
   return parent.size === n;
 };
+
+// Time complexity is O(N + E) where N is the number of nodes and E is the number of edges. Constructing the adjacency matrix takes O(N + E)
+// time and then performing the DFS takes O(N + E) time
+
+// Space comlexity is complexity is O(N + E) for the adjacency list. The max stack size is also O(N)

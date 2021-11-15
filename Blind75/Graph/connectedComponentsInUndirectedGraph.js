@@ -5,8 +5,6 @@
 // Input: n = 5, edges = [[0,1],[1,2],[2,3],[3,4]]
 // Output: 1
 
- 
-
 // Constraints:
 
 //     1 <= n <= 2000
@@ -16,32 +14,36 @@
 //     ai != bi
 //     There are no repeated edges.
 
+var countComponents = function (n, edges) {
+  let components = 0;
+  let visited = new Array(n).fill(0);
+  let adjacency = new Array(n).fill(0).map(() => new Array());
 
-// var countComponents = function(n, edges) {
-//     let components = 0;
-//     let visited = new Array(n).fill(0);
-//     let adjacency = new Array(n).fill(0).map(() => new Array())
-    
-//     for(let edge of edges){
-//         adjacency[edge[0]].push(edge[1])
-//         adjacency[edge[1]].push(edge[0])
-//     }
-    
-//     for(let i=0; i<n; i++){
-//         if(visited[i] === 0){
-//             components += 1;
-//             dfs(adjacency, visited,i)
-//         }
-//     }
-//     return components
-// };
+  for (let edge of edges) {
+    adjacency[edge[0]].push(edge[1]);
+    adjacency[edge[1]].push(edge[0]);
+  }
 
-// const dfs = function(adjacency, visited, startNode){
-//     visited[startNode] = 1
-    
-//     for(let i=0; i<adjacency[startNode].length; i++){
-//         if(visited[adjacency[startNode][i]] === 0){
-//             dfs(adjacency, visited, adjacency[startNode][i])
-//         }
-//     }
-}
+  for (let i = 0; i < n; i++) {
+    if (visited[i] === 0) {
+      components += 1;
+      dfs(adjacency, visited, i);
+    }
+  }
+  return components;
+};
+
+const dfs = function (adjacency, visited, startNode) {
+  visited[startNode] = 1;
+
+  for (let i = 0; i < adjacency[startNode].length; i++) {
+    if (visited[adjacency[startNode][i]] === 0) {
+      dfs(adjacency, visited, adjacency[startNode][i]);
+    }
+  }
+};
+
+// Time complextiy is O(E + V).Where E is the number of edges and V the number of vertices.
+// During the DFS we hit each vertix once and we also loop over each of that vertices edges / neighbours
+
+// Space comlpexity O (E + V). Building the adjacency list is O(E + V) and the max size of the call stack is O(V)
