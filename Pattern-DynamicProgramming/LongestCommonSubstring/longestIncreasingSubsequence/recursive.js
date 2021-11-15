@@ -30,6 +30,10 @@ const findLISLength = function (nums) {
   return recursive(nums, -1, 0);
 };
 
+// Time complexity is O(2^N) where N is the length of the input array
+
+// Space complexity is O(N) for the recursion stack
+
 console.log(
   `Length of Longest Increasing Subsequence: ---> ${findLISLength([
     4, 2, 3, 6, 10, 1, 12,
