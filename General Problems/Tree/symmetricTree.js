@@ -33,4 +33,4 @@ const recursive = function (i, j) {
 // Time complexity is O(N) where N is the number of nodes in the tree
 
 // Space complexity is O(N). The number of recursive calls is bound by the height of the tree and in the worst case the tree is linear and the
-// the height is in O(N)
+// the height is in O(N) k
