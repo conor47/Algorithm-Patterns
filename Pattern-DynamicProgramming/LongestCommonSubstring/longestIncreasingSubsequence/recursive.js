@@ -23,7 +23,7 @@ const findLISLength = function (nums) {
       c1 = 1 + recursive(nums, currentIndex, currentIndex + 1);
     }
 
-    let c2 = recursive(nums, currentIndex, currentIndex + 1);
+    let c2 = recursive(nums, previousIndex, currentIndex + 1);
 
     return Math.max(c1, c2);
   };
