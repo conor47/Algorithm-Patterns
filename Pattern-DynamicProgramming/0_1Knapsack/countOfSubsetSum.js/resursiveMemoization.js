@@ -14,7 +14,7 @@
 
 const countSubsets = function (num, sum) {
   let dp = [];
-  let findSubsetsRecursive = function (num, currentIndex, sum, total) {
+  let findSubsetsRecursive = function (num, currentIndex, sum) {
     if (sum === 0) return 1;
 
     if (currentIndex === num.length) return 0;
@@ -31,13 +31,13 @@ const countSubsets = function (num, sum) {
         );
       }
 
-      let sum2 = findSubsetsRecursive(num, currentIndex + 1, sum, total);
+      let sum2 = findSubsetsRecursive(num, currentIndex + 1, sum);
 
       dp[currentIndex][sum] = sum1 + sum2;
     }
     return dp[currentIndex][sum];
   };
-  return findSubsetsRecursive(num, 0, sum, 0);
+  return findSubsetsRecursive(num, 0, sum);
 };
 
 // Time complexity is O(N * S) where N is the number of items in nums and S is the target sum

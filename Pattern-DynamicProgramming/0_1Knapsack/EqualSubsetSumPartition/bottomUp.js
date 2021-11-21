@@ -33,7 +33,7 @@ let canPartition = function (num) {
     .fill(false)
     .map(() => Array(target + 1).fill(false));
 
-  //   fill first column with 0s. For a target of 0 we can always find a partition
+  //   fill first column with true. For a target of 0 we can always find a partition
   for (let i = 0; i < num.length; i++) {
     dp[i][0] = true;
   }
