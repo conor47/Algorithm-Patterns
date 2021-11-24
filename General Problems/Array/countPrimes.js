@@ -64,5 +64,3 @@ var countPrimes = function (n) {
   }
   return count;
 };
-
-// Time complexity is

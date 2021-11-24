@@ -45,3 +45,6 @@ var canConstruct = function (ransomNote, magazine) {
 // Time complexity is O( M) M is the length of the magazine string. It is not O(M + N) since M >= N in all valid cases
 
 // Space complexity is O(1) since our map will never be greater than 26
+
+// There is also an addititional solution involding turning each string into a char array
+// reverse sorting each array and then turning each array into a stack and comparing top elements
