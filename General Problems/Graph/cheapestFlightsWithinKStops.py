@@ -2,6 +2,10 @@
 
 # You are also given three integers src, dst, and k, return the cheapest price from src to dst with at most k stops. If there is no such route, return -1.
 
+# Breadth first search solution
+
+import heapq
+
 class Solution:
     def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
         if src == dst:
@@ -30,3 +34,29 @@ class Solution:
 
 # Space complexity is O(V^2 + V * K). The first part is the stsandard space complexity of an adjacency matrix representation of a graph.
 # The second part is for the seen dictionary
+
+# Dijkstras solution
+
+class Solution:
+    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
+        if dst == src:
+            return 0
+        graph = defaultdict(list)
+
+        for u, v, w in flights:
+            graph[u].append((v,w))
+    
+        pq = [(0,-1,src)]
+
+        while pq:
+            cost, steps, node = heapq.heappop(pq)
+
+            if steps > k:
+                continue
+
+            if node == dst:
+                return cost
+            
+            for neighbor, weight in graph[node]:
+                heapq.heappush((cost+weight,steps+1,neighbor))
+        return -1
