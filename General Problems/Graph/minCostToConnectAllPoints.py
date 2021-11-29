@@ -57,6 +57,13 @@ class Solution:
                 num_edges += 1
         return cost
 
+# Time complexity is O(E LogE) where E represents the number of edges
+# since we are sorting the array of edges.
+
+# space complexity is O(E)
+
+
+
 class UnionFind:
     def __init__(self, size):
         self.root = [i for i in range(size)]
@@ -87,3 +94,4 @@ class UnionFind:
 
     def connected(self, x, y):
         return self.find(x) == self.find(y)
+
