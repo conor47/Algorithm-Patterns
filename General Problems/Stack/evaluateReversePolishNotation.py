@@ -65,3 +65,25 @@ class Solution:
 # Time complexity is O(N)
 
 # Space complexity is O(N). The number of numbers on the stack is never more than half of the input array
+
+# same solution using lambda functions
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        stack = []
+        operations = {
+            '*' : lambda a,b: a * b,
+            '/': lambda a,b : int(a/b),
+            '+': lambda a,b: a +b,
+            '-': lambda a,b : a-b
+        }
+        
+        for i in tokens:
+            if i not in '+-/*':
+                stack.append(int(i))
+            else:
+                val1 = stack.pop()
+                val2 = stack.pop()
+                
+                res = operations[i](val2,val1)
+                stack.append(res)
+        return stack[0]
