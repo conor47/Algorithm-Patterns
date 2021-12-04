@@ -89,3 +89,28 @@ class TrieNode:
 # The recursion stack for the DFS will be at most N high during traversal
 
 # Time complexity is O(N + M)
+
+# alternative solution using just a dictionary
+
+# the key in the dictionary is a word length and the value is a list of words in the dictionary of that length
+class MagicDictionary:
+
+    def __init__(self):
+        self.dic = {}
+
+    def buildDict(self, dictionary: List[str]) -> None:
+        for word in dictionary:
+            self.dic[len(word)] = self.dic.get(len(word),[]) + [word]
+
+    def search(self, searchWord: str) -> bool:
+        
+        for candidate in self.dic.get(len(searchWord),[]):
+            diff = 0
+            for i in range (len(searchWord)):
+                if candidate[i] != searchWord[i]:
+                    diff += 1
+            if diff == 1:
+                return True
+        return False
+
+
