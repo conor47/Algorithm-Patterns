@@ -54,3 +54,31 @@ class Solution:
             
 # Time complexity O(N)
 # Space complexity is O(N)
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 0:
+            return 0
+        
+        if len(nums) == 1:
+            return nums[0]
+        
+        if len(nums) == 2:
+            return max(nums[1], nums[0])
+        
+        arr1 = nums[1:]
+        arr2 = nums[:-1]
+        return max(self.robber(arr1), self.robber(arr2))
+        
+        
+    def robber(self,arr):
+        t1 = 0
+        t2 = 0
+        for house in arr:
+            temp = t1
+            t1 = max(house+t2,t1)
+            t2 = temp
+        return t1
+
+# Time complexity is O(N)
+# Space complexity is O(1)
