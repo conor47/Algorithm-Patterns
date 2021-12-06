@@ -46,3 +46,27 @@ class Solution:
 # Time complexity is O(N Log N)
 # Space complexity is O(N)
 
+# counting sort
+
+class Solution:
+    def heightChecker(self, heights: List[int]) -> int:
+        
+        maxVal = max(heights)
+        
+        freq = [0] * (maxVal + 1)
+        for i in heights:
+            freq[i] += 1
+        for i in range(1,len(freq)):
+            freq[i] += freq[i-1]
+        
+        places = [0] * len(heights)
+        
+        for i in heights:
+            places[freq[i]-1] = i
+            freq[i] -= 1
+            
+        return sum([i!=j for i,j in zip(places,heights)])
+
+# Time complexity is O(N)
+
+# Space complexity is O(N)
