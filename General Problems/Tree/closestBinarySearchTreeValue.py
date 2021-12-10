@@ -29,3 +29,17 @@ class Solution:
 # Time complexity is O(Log N) or O(H) where H is the height of the tree
 
 # Space complexity is O(H)
+
+# Much simpler iterative binary search
+
+class Solution:
+    def closestValue(self, root: Optional[TreeNode], target: float) -> int:
+        closest = root.val
+        while root:
+            closest = min(closest,root.val, key = lambda x:abs(target-x))
+            root = root.left if target < root.val else root.right
+        return closest
+
+# Time complexity is O(H)
+
+# Space complexity O(1)
