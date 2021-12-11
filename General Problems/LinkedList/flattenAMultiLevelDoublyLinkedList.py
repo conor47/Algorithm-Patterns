@@ -4,6 +4,8 @@
 
 # Return the head of the flattened list. The nodes in the list must have all of their child pointers set to null.
 
+# Iterative solution using a stack
+
 class Solution:
     def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
         if not head:
@@ -34,4 +36,34 @@ class Solution:
         
 # Time complexity is O(N)
 # Space complexity O(N)
+
+# Recursive solution
+
+class Solution:
+    def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if head is None:
+            return head
+        
+        self.dfs(head)
+        return head
+    
+    def dfs(self,node):
+        
+        while node:
+            
+            curr_next = node.next
+            if not curr_next:
+                tail = node
+
+            if node.child:
+                node.next = node.child
+                node.child.prev = node
+                child_tail = self.dfs(node.child)
+
+                if curr_next:
+                    curr_next.prev = child_tail
+                child_tail.next = curr_next
+                node.child = None
+            node = node.next
+        return tail
 
