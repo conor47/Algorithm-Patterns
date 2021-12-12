@@ -58,3 +58,21 @@ class Solution:
 # Time complexity is O(n)
 
 # Space complexity is O(N)
+
+# Bottom up iterative solution
+
+class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        
+        n = len(cost)
+        dp = [float('inf')] * len(cost)
+        dp[0], dp[1] = 0,0
+
+        for i in range(2,len(cost)):
+            dp[i] = min(dp[i-1] + cost[i-1], dp[i-2]+ cost[i-2])
+
+        return min(dp[n-1] + cost[n-1], dp[n-2]+ cost[n-2])
+
+# Time complexity is O(N)
+
+# Space complexity is O(N)
