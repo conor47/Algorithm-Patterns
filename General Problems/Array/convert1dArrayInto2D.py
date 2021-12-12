@@ -21,3 +21,8 @@ class Solution:
 
 # Space complexity is O(N) if we include the output array, otherwise its O(N) since we are taking slices of size N 
 
+# More succint solution, same logic
+
+class Solution:
+    def construct2DArray(self, original: List[int], m: int, n: int) -> List[List[int]]:        
+        return [original[i:i+n] for i in range(0,len(original),n)] if m*n == len(original) else []
