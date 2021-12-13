@@ -44,3 +44,33 @@ class Solution:
 
 # Time complexity is O(N) since we are doing a dfs over the entire tree to construct a graph
 # Space complexity is O(N) and not O(V + E) since we know that each node has at most one edge
+
+# Slightly simpler solution which involves annotating the tree nodes
+
+class Solution:
+    def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
+        if not root:
+            return []
+        self.dfs(root,None)
+        
+        q = [(target,0)]
+        seen = {target}
+        while q:
+            if q[0][1] == k:
+                return [node.val for node,d in q]
+            node, d = q.pop(0)
+            for nei in (node.left,node.right,node.par):
+                if nei and nei not in seen:
+                    q.append((nei, d + 1))
+                    seen.add(nei)
+        return []
+        
+    def dfs(self, node, parent):
+        if node:
+            node.par = parent
+            self.dfs(node.left, node)
+            self.dfs(node.right, node)
+
+# Time complexity is O(N)
+
+# Space complexity is O(N)
