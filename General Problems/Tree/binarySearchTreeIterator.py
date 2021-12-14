@@ -32,3 +32,30 @@ class BSTIterator:
 # Time complexity is O(N) where N is the number of nodes in the tree
 
 # Space complexity is O(N)
+
+# Iterative solution using custom stack
+
+class BSTIterator:
+
+    def __init__(self, root: Optional[TreeNode]):
+        self.stack = []
+        self.helper(root)
+
+    def helper(self,node):
+        while node:
+            self.stack.append(node)
+            node = node.left
+
+    def next(self) -> int:
+        node = self.stack.pop()
+        if node.right:
+            self.helper(node.right)
+        return node.val
+            
+
+    def hasNext(self) -> bool:
+        return len(self.stack) > 0
+
+
+# Time complexity of the hasNext operation is O(1). Time complexity of the next operation is 
+# on average O(1) but in some cases O(N). Its amortized time complexity is O(1)
