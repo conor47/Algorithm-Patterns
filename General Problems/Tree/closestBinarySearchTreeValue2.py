@@ -24,4 +24,4 @@ class Solution:
 
 # Time complexity is O(N LogK)
 
-# Space complexity is O(N + K) or O(H + K) for the heap and the recursion stack
+# Space complexity is O(N + K) or O(H + K) for the heap and the recursion stackit
