@@ -60,3 +60,6 @@ class Solution:
             if nei not in visited:
                 self.dfs(nei,minQuiet,visited,graph)
 
+# Time complexity is O(N^2)
+
+# Space complexity is O()
