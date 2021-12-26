@@ -14,6 +14,7 @@ class Solution:
         graph = defaultdict(list)
         
         for u,v,w in flights:
+
             graph[u] += [(v,w)]
         
         q = [(src,-1,0)]
