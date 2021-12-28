@@ -38,10 +38,12 @@ class Solution:
         s = ''
         
         def backtrack(cand):
+            nonlocal s
+            if len(s) > 0:
+                return
             if cand in strings:
                 return
             if len(cand) == len(nums[0]):
-                nonlocal s
                 s = cand
                 return
             
@@ -56,4 +58,24 @@ class Solution:
 
 # Time complexity is O(2^n)
 
-# Space complexity is O(n)
+# Faster and more compact code
+
+class Solution:
+    def findDifferentBinaryString(self, nums: List[str]) -> str:
+        strings = set(nums)
+        
+        def backtrack(cand):
+            if cand in strings:
+                return None
+            if len(cand) == len(nums[0]):
+                return cand
+                
+            chars = ("1","0")
+            for char in chars:
+                cand += char
+                res = backtrack(cand)
+                if res:
+                    return res
+                cand = cand[:-1]
+        
+        return backtrack('')    
