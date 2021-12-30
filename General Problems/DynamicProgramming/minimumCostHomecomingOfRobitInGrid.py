@@ -7,6 +7,9 @@
 
 # Return the minimum total cost for this robot to return home.
 
+# Could be more efficiently implemented by doing some basic row / column math but this
+# is just a straighforward method
+
 class Solution:
     def minCost(self, startPos: List[int], homePos: List[int], rowCosts: List[int], colCosts: List[int]) -> int:
         total = 0
