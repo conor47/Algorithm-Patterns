@@ -39,7 +39,7 @@ class solution:
         n = len(s)
         for i in range(n-1,-1,-1):
             for word in wordDict:
-                if i + len(word) <= len(s) and word == s[i:i + len(word)]:
+                if i + len(word) <= len(s) and word == ks[i:i + len(word)]:
                     dp[i] = dp[i + len(word)]
                 if dp[i]:
                     break
