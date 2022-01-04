@@ -35,3 +35,18 @@ class Solution:
 # Time complexity is O(MN^2 * M * N)
 
 # Space complexity is O(MN) if we consider the newBox grid
+
+# Same logic, more succint code
+
+class Solution:
+    def rangeSum(self, nums: List[int], n: int, left: int, right: int) -> int:
+        sums = []
+        for i in range(len(nums)):
+            prefix = 0
+            for j in range(i,len(nums)):
+                prefix += nums[j]
+                sums.append(prefix)
+        sums.sort()
+        return sum(sums[left-1:right])%(10**9+7)
+
+        
