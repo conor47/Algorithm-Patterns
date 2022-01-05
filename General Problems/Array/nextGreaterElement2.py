@@ -40,3 +40,20 @@ class Solution:
 # Time complexity is O(N^2)
 
 # Space complexity is O(1) if we do not consider the result array
+
+# Stack solution
+
+class Solution:
+    def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        res = [-1] * len(nums)
+        stack = []
+        for i in list(range(len(nums)-1,-1,-1)) * 2:
+            while stack and nums[stack[-1]] <= nums[i]:
+                stack.pop()
+            res[i] = -1 if not stack else nums[stack[-1]]
+            stack.append(i)
+        return res
+
+# Time complexity is O(N)
+
+# Space complexity is O(N)
