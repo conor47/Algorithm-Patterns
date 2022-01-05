@@ -48,6 +48,25 @@ class Solution:
                 i -= 1        
             domains[cpDomain[i+1:]] = domains.get(cpDomain[i+1:],0) + count
             
-# Time complexity is O(N * M) where N is the number of strings and M is the length of the longest string
+# Time complexity is O(N) N is the number of strings  
 
 # Space complexity is O(N) 
+
+# Same logic , shorter code
+
+class Solution(object):
+    def subdomainVisits(self, cpdomains):
+        ans = collections.Counter()
+        for domain in cpdomains:
+            count, domain = domain.split()
+            count = int(count)
+            frags = domain.split('.')
+            for i in range(len(frags)):
+                ans[".".join(frags[i:])] += count
+
+        return ["{} {}".format(ct, dom) for dom, ct in ans.items()]
+            
+        res = []
+        for d,c in domains.items():
+            res.append(str(c) + ' ' + d)
+        return res     
