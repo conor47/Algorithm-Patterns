@@ -56,3 +56,6 @@ class Solution:
                     return False
         return True
 
+# Time complexity is O(M) where M is the total number of chars in all the words combined
+
+# Space complexity is O(1) since dic will store at most 26 items
