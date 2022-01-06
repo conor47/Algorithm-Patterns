@@ -55,7 +55,7 @@ class Solution:
                     res = max(res,1+recurse(new))
             return res
         
-        res = -1
+        res = 1
         for i in range(len(words)-1,-1,-1):
             res = max(res,recurse(words[i]))
         return res
