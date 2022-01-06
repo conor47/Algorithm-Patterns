@@ -55,3 +55,24 @@ class Solution:
 # Time complexity O(N^2) since the array pop calls run in O(N) time and we are calling it N times
 
 # Space complexity is O(N)
+
+# Fischer Yates algo
+class Solution:
+    def __init__(self, nums):
+        self.array = nums
+        self.original = list(nums)
+
+    def reset(self):
+        self.array = self.original
+        self.original = list(self.original)
+        return self.array
+
+    def shuffle(self):
+        for i in range(len(self.array)):
+            swap_idx = random.randrange(i, len(self.array))
+            self.array[i], self.array[swap_idx] = self.array[swap_idx], self.array[i]
+        return self.array
+
+# Time complexity is O(N)
+
+# Space complexity is O(N)
