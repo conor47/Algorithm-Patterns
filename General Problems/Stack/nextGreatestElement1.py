@@ -58,5 +58,6 @@ class Solution:
         return res
 
 # Time complexity is O(N * M) where N and M are the lengths of nums1 and nums2
+# Note the second loop can be removed and the opeations combined with the first loop
 
 # Space complexity is O(M)
