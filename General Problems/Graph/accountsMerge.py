@@ -60,3 +60,4 @@ class Solution:
             res.append([name] + sorted(emails))
         return res
             
+# Time complexity is O(NK LogNK) where N is the number of accounts and K length of the longest account
