@@ -34,3 +34,19 @@
 # Time complexity is O(N * M) where N is the length of the array and M is the number of updates
 
 # Space complexity is (N)
+
+# O(N + M) solution using prefix sums
+
+class Solution:
+    def getModifiedArray(self, length: int, updates: List[List[int]]) -> List[int]:
+        arr = [0] * (length + 1)
+        
+        for start,end,inc in updates:
+            arr[start] += inc
+            arr[end+1] -= inc
+        
+        for i in range(1,len(arr)):
+            arr[i] = arr[i] + arr[i-1]
+        
+        arr.pop()
+        return arr
