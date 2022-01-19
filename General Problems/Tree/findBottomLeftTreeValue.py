@@ -37,3 +37,6 @@ class Solution:
 # Time complexity is O(N)
 
 # Space complexity is O(N)
+
+# Another idea is to simply perform a BFS adding values from right to left instead of left to right
+# the last node we end on is the target
